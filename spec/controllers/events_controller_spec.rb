@@ -114,7 +114,9 @@ describe EventsController do
                 }
               },
               "location_id" => "1",
-              "details" => "sdfasdfasdf"
+              "details" => "sdfasdfasdf",
+              "max_students" => 50,
+              "max_volunteers" => 20
             }
           }
         }

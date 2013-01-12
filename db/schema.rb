@@ -30,10 +30,12 @@ ActiveRecord::Schema.define(:version => 20130114214614) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "location_id"
     t.text     "details"
+    t.integer  "max_students",   :default => 0, :null => false
+    t.integer  "max_volunteers", :default => 0, :null => false
     t.string   "time_zone"
   end
 

@@ -9,6 +9,9 @@ class Event < ActiveRecord::Base
   has_many :event_sessions  
   accepts_nested_attributes_for :event_sessions, allow_destroy: true
   validates :event_sessions, length: { minimum: 1 }
+  validates :max_students, :max_volunteers, 
+    :presence => true,
+    :numericality => { :greater_than => 0 }
 
   validates_presence_of :title
   validates_presence_of :time_zone

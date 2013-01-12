@@ -11,6 +11,8 @@ FactoryGirl.define do
     sequence(:title) { |n| "Event #{n}" }
     details "This is note in the details attribute."
     time_zone "Hawaii"
+    max_students 50
+    max_volunteers 20
 
     before(:create) do |event|
       event.event_sessions << create(:event_session)
@@ -21,6 +23,7 @@ FactoryGirl.define do
         event.event_sessions.destroy_all
       end
     end
+
   end
 
   factory :location do

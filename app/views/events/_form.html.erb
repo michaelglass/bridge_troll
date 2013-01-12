@@ -34,6 +34,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :max_students %>
+    <%= f.number_field :max_students %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :max_volunteers %>
+    <%= f.number_field :max_volunteers %>
+  </div>
+
+  <div class="field">
     <%= f.label :location_id %>
     <%= collection_select(:event, :location_id, Location.all, :id, :name, :prompt => true) %>
   </div>

@@ -23,6 +23,18 @@ describe Event do
     event.should be_valid  
   end
 
+  describe 'capacities' do
+    [:students, :volunteers].each do |role|
+      it "must have a max # of #{role} > 0" do
+        max_method = "max_#{role}="
+        [0, nil].each do |invalid_value|
+          @event.send max_method, invalid_value
+          @event.should_not be_valid
+        end
+      end
+    end
+  end
+
   it "must have a time zone" do
     event = build(:event, :time_zone => nil)
     event.should have(1).error_on(:time_zone)

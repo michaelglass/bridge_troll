@@ -51,7 +51,9 @@ describe "the event listing page" do
     end
 
     select "Alaska", from: 'event_time_zone'
-    fill_in "event_details", :with => "This is a note in the detail text box\n With a new line!"
+    fill_in "Details", :with => "This is a note in the detail text box\n With a new line!"
+    fill_in "Max students", :with => 50
+    fill_in "Max volunteers", :with => 20
 
     click_button "Create Event"
 
