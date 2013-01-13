@@ -33,8 +33,8 @@ FactoryGirl.define do
     ends_at (DateTime.now + 1.day)
   end
 
-  factory :role do
-    sequence(:title) { "Teacher Level #{n}" }
+  factory :section do
+    title "Awesome_group"
   end
 
   factory :volunteer_rsvp do

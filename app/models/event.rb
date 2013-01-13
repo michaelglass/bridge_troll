@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   has_many :volunteers, through: :volunteer_rsvps, source: :user
   has_many :event_organizers
   has_many :organizers, through: :event_organizers, source: :user
+  has_many :sections
 
   has_many :event_sessions  
   accepts_nested_attributes_for :event_sessions, allow_destroy: true
