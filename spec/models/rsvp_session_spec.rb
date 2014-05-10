@@ -22,6 +22,15 @@ describe RsvpSession do
       expect {
         session1.destroy
       }.to change { rsvp.reload.checkins_count }.by(-1)
+      expect {
+        session2.save
+      }.to_not change { rsvp.reload.checkins_count }
+
+      expect {
+        session2.checked_in = false
+        session2.save
+      }.to change { rsvp.reload.checkins_count }.by(-1)
+
     end
   end
 end
